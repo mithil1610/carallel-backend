@@ -39,8 +39,8 @@ export class ResourcesService {
         }
         
         const sql =
-            "SELECT JSON_OBJECT('articleId', ua.readArticle, 'lastReadAt', ua.lastReadAt, \n" +
-            "'articleTitle', a.articleTitle, 'author', a.author, 'articleText', a.article) \n" +
+            "SELECT JSON_OBJECT('id', ua.readArticle, 'lastReadAt', ua.lastReadAt, \n" +
+            "'articleTitle', a.articleTitle, 'author', a.author, 'article', a.article) \n" +
             'as data FROM `user-article` ua join `articles` a on a.id = ua.readArticle \n' +
             "WHERE ua.readByUser = " + user.user.id;
         
